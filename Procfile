@@ -1,0 +1,1 @@
+web: ./exismys.tech

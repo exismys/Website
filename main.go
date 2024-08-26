@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+  "os"
 )
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
@@ -24,5 +25,10 @@ func handlerHome(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handlerHome)
-	http.ListenAndServe(":3000", nil)
+  port := os.Getenv("PORT")
+  if port == "" {
+      port = "8080" // default port if not set
+  }
+  fmt.Printf("Listening to port %s", port)
+  http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
