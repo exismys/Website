@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
-  "os"
+	"os"
 )
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
@@ -24,11 +24,12 @@ func handlerHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handlerHome)
-  port := os.Getenv("PORT")
-  if port == "" {
-      port = "8080" // default port if not set
-  }
-  fmt.Printf("Listening to port %s", port)
-  http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Printf("Listening to port %s", port)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
