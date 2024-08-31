@@ -8,10 +8,9 @@ import (
 )
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
-	data := struct {
-		Name string
-	}{
-		Name: "Ritesh Patel",
+	blogTitles, err := getBlogList()
+	if err != nil {
+		panic(err)
 	}
 
 	t, err := template.ParseFiles("templates/index.html")
@@ -20,7 +19,7 @@ func handlerHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	t.Execute(w, data)
+	t.Execute(w, blogTitles)
 }
 
 func main() {
