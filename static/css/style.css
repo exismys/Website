@@ -73,7 +73,14 @@ a:hover {
 }
 
 .upcoming {
+  font-size: 0.8em;
   color: #e74c3c;
+  font-style: italic;
+}
+
+.date {
+  font-size: 0.8em;
+  color: #777;
   font-style: italic;
 }
 

@@ -8,10 +8,7 @@ import (
 )
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
-	blogTitles, err := getBlogList()
-	if err != nil {
-		panic(err)
-	}
+	blogTitles := getBlogList()
 
 	t, err := template.ParseFiles("templates/index.html")
 	if err != nil {

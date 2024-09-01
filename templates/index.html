@@ -35,8 +35,16 @@
       <section class="blogs">
         <h2>Blogs</h2>
         <ul>
-          <li><a href="#">Basics of Physics Simulations</a> <span class="upcoming">Upcoming</span></li>
-          <li><a href="#">Quotes That Speak to My Soul</a> <span class="upcoming">Upcoming</span></li>
+          {{ range . }}
+          <li>
+            <a href="#"> {{ .Title }}</a>
+            {{if .Status}}
+            <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+            {{else}}
+            <span class="upcoming">Upcoming</span>
+            {{end}}
+          </li>
+          {{ end }}
         </ul>
       </section>
 
