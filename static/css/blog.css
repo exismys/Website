@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.publish-date {
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+}
+
+.tag {
+  color: #e76f51;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+blockquote {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}

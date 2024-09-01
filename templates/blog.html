@@ -9,11 +9,13 @@
   <title>Blog - {{ .Title }}</title>
 </head>
 <body>
-  <article>
-    <h1>{{ .Title }}</h1>
-    <p class="publish-date">{{ .Date }}</p>
-    {{ .Content }}
-    <p>Tags: {{ range .Tags }}{{ . }}{{ end }} </p>
-  </article>
+  <div class="container">
+    <article>
+      <h1>{{ .Title }}</h1>
+      <p class="publish-date">{{ .Date.Format "January 2, 2006" }}</p>
+      {{ .Content }}
+      <p>Tags: {{ range .Tags }}<span class="tag">{{ . }}</span>{{ end }}</p>
+    </article>
+  </div>
 </body>
 </html>

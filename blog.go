@@ -103,7 +103,6 @@ func getBlogPost(blogFile string) BlogPost {
 		parts = bytes.SplitN(dataBytes, []byte("\r\n\r\n"), 2)
 	}
 
-	fmt.Println(len(parts))
 	metadata := parts[0]
 	blogContent := parts[1]
 
