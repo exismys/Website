@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpeg" href="static/images/levy.jpeg">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="icon" type="image/jpeg" href="/static/images/levy.jpeg">
+  <link rel="stylesheet" href="/static/css/layout.css">
+  <link rel="stylesheet" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Home</title>
 </head>
@@ -39,7 +40,7 @@
           <li>
             {{if .Status}}
             <a href="/blog/{{ .Slug }}"> {{ .Title }}</a>
-            <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+            <span class="publish-date">{{ .Date.Format "January 2, 2006" }}</span>
             {{else}}
             <a href="#"> {{ .Title }}</a>
             <span class="upcoming">Upcoming</span>
