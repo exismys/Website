@@ -37,10 +37,11 @@
         <ul>
           {{ range . }}
           <li>
-            <a href="#"> {{ .Title }}</a>
             {{if .Status}}
+            <a href="/blog/{{ .Slug }}"> {{ .Title }}</a>
             <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
             {{else}}
+            <a href="#"> {{ .Title }}</a>
             <span class="upcoming">Upcoming</span>
             {{end}}
           </li>
