@@ -27,14 +27,14 @@ type BlogPost struct {
 func getBlogList() []BlogTitle {
 	blogTitles := []BlogTitle{}
 
-	var title string
-	var date time.Time
-	var status string
-
 	err := filepath.Walk("blogs", func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
+
+		var title string
+		var date time.Time
+		var status string
 
 		if filepath.Ext(path) == ".html" {
 			filenameWithoutExt := strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
